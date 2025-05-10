@@ -50,6 +50,8 @@ export class Cubism4InternalModel extends InternalModel {
     idParamBodyAngleX = ParamBodyAngleX;
     idParamBreath = ParamBreath;
 
+    enableNaturalMovements = false;
+
     /**
      * The model's internal scale, defined in the moc3 file.
      */
@@ -68,6 +70,7 @@ export class Cubism4InternalModel extends InternalModel {
         this.coreModel = coreModel;
         this.settings = settings;
         this.motionManager = new Cubism4MotionManager(settings, options);
+        this.enableNaturalMovements = options?.enableNaturalMovements ?? false;
 
         this.init();
     }
@@ -207,7 +210,9 @@ export class Cubism4InternalModel extends InternalModel {
         this.updateFocus();
 
         // revert the timestamps to be milliseconds
-        this.updateNaturalMovements(dt * 1000, now * 1000);
+        if (this.enableNaturalMovements) {
+            this.updateNaturalMovements(dt * 1000, now * 1000);
+        }
 
         // TODO: Add lip sync API
         // if (this.lipSync) {

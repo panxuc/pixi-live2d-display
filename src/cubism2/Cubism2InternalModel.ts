@@ -36,6 +36,8 @@ export class Cubism2InternalModel extends InternalModel {
 
     textureFlipY = true;
 
+    enableNaturalMovements = false;
+
     /**
      * Number of the drawables in this model.
      */
@@ -54,6 +56,8 @@ export class Cubism2InternalModel extends InternalModel {
         this.settings = settings;
         this.motionManager = new Cubism2MotionManager(settings, options);
         this.eyeBlink = new Live2DEyeBlink(coreModel);
+
+        this.enableNaturalMovements = options?.enableNaturalMovements ?? false;
 
         this.eyeballXParamIndex = coreModel.getParamIndex('PARAM_EYE_BALL_X');
         this.eyeballYParamIndex = coreModel.getParamIndex('PARAM_EYE_BALL_Y');
@@ -216,7 +220,10 @@ export class Cubism2InternalModel extends InternalModel {
         }
 
         this.updateFocus();
-        this.updateNaturalMovements(dt, now);
+        
+        if (this.enableNaturalMovements) {
+            this.updateNaturalMovements(dt, now);
+        }
 
         this.physics?.update(now);
         this.pose?.update(dt);

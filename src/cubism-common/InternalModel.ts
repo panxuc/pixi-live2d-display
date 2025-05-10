@@ -38,7 +38,9 @@ export interface Bounds {
     height: number;
 }
 
-export interface InternalModelOptions extends MotionManagerOptions {}
+export interface InternalModelOptions extends MotionManagerOptions {
+    enableNaturalMovements?: boolean;
+}
 
 const tempBounds: Bounds = { x: 0, y: 0, width: 0, height: 0 };
 
