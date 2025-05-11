@@ -28,17 +28,20 @@ export namespace config {
     /**
      * Default fading duration for motions without such value specified.
      */
-    export let motionFadingDuration = 500;
+    // export let motionFadingDuration = 500;
+    export let motionFadingDuration = 0;
 
     /**
      * Default fading duration for idle motions without such value specified.
      */
-    export let idleMotionFadingDuration = 2000;
+    // export let idleMotionFadingDuration = 2000;
+    export let idleMotionFadingDuration = 0;
 
     /**
      * Default fading duration for expressions without such value specified.
      */
-    export let expressionFadingDuration = 500;
+    // export let expressionFadingDuration = 500;
+    export let expressionFadingDuration = 0;
 
     /**
      * If false, expression will be reset to default when playing non-idle motions.

@@ -55,7 +55,7 @@ export class Cubism2InternalModel extends InternalModel {
         this.coreModel = coreModel;
         this.settings = settings;
         this.motionManager = new Cubism2MotionManager(settings, options);
-        this.eyeBlink = new Live2DEyeBlink(coreModel);
+        // this.eyeBlink = new Live2DEyeBlink(coreModel);
 
         this.enableNaturalMovements = options?.enableNaturalMovements ?? false;
 

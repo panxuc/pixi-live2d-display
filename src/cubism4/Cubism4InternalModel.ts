@@ -78,9 +78,9 @@ export class Cubism4InternalModel extends InternalModel {
     protected init() {
         super.init();
 
-        if (this.settings.getEyeBlinkParameters()?.length! > 0) {
-            this.eyeBlink = CubismEyeBlink.create(this.settings);
-        }
+        // if (this.settings.getEyeBlinkParameters()?.length! > 0) {
+        //     this.eyeBlink = CubismEyeBlink.create(this.settings);
+        // }
 
         this.breath.setParameters([
             new BreathParameterData(this.idParamAngleX, 0.0, 15.0, 6.5345, 0.5),

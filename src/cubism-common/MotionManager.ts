@@ -334,16 +334,16 @@ export abstract class MotionManager<Motion = any, MotionSpec = any> extends Even
                 this.emit('motionFinish');
             }
 
-            if (this.state.shouldOverrideExpression()) {
-                this.expressionManager?.restoreExpression();
-            }
+            // if (this.state.shouldOverrideExpression()) {
+            //     this.expressionManager?.restoreExpression();
+            // }
 
             this.state.complete();
 
-            if (this.state.shouldRequestIdleMotion()) {
-                // noinspection JSIgnoredPromiseFromCall
-                this.startRandomMotion(this.groups.idle, MotionPriority.IDLE);
-            }
+            // if (this.state.shouldRequestIdleMotion()) {
+            //     // noinspection JSIgnoredPromiseFromCall
+            //     this.startRandomMotion(this.groups.idle, MotionPriority.IDLE);
+            // }
         }
 
         return this.updateParameters(model, now);
